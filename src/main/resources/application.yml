@@ -68,6 +68,12 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
   resources:
     cache-period: 3600000
+  data:
+    elasticsearch:
+      #elasticsearch服务地址，默认端口为9300
+      cluster-nodes: 192.168.237.130:9300
+      #节点名字，默认elasticsearch
+      cluster-name: docker-cluster
 datasources:
   elastic:
     datasource:

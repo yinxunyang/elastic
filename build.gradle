@@ -42,10 +42,12 @@ buildscript {
 
 repositories {
 	mavenLocal()
-
+	maven { url 'http://repo2.maven.org/maven2/' }
 	maven { url 'http://172.10.11.7:8081/nexus/content/repositories/snapshots/' }
 	maven { url 'http://172.10.11.7:8081/nexus/content/repositories/public/' }
 	maven { url 'http://172.10.11.7:8081/nexus/content/repositories/thirdparty/' }
+	//maven { url 'http://repo2.maven.org/maven2/' }
+	mavenCentral()
 	flatDir {
 		dirs 'lib'
 	}
@@ -150,7 +152,14 @@ dependencies {
 	compile("cn.com.higinet:ess-ss-api:6.0")
 	compile("cn.com.higinet:lget_common:1.0.1")
 	compile("dom4j:dom4j:1.6.1")
+	//添加Spring Data Elasticsearch依赖
+	compile('org.springframework.boot:spring-boot-starter-data-elasticsearch')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 
+	//添加JNA依赖
+	compile('net.java.dev.jna:jna:4.3.0')
+	compile('com.google.guava:guava:26.0-jre')
 	compile("net.coobird:thumbnailator:0.4.8")
 	//==编译时==
 	compileOnly('org.projectlombok:lombok')
