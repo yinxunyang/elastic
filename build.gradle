@@ -46,7 +46,6 @@ repositories {
 	maven { url 'http://172.10.11.7:8081/nexus/content/repositories/snapshots/' }
 	maven { url 'http://172.10.11.7:8081/nexus/content/repositories/public/' }
 	maven { url 'http://172.10.11.7:8081/nexus/content/repositories/thirdparty/' }
-	//maven { url 'http://repo2.maven.org/maven2/' }
 	mavenCentral()
 	flatDir {
 		dirs 'lib'
@@ -56,7 +55,6 @@ repositories {
 dependencyManagement {
 	imports {
 		mavenBom 'org.springframework.boot:spring-boot-starter-parent:'+springBootVersion
-		// mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Dalston.RELEASE'
 	}
 }
 
@@ -85,10 +83,6 @@ test {
 	outputs.dir snippetsDir
 }
 dependencies {
-	//compile project(":bv-mybatis")
-	//compile project(":bv-jxls:bv-jxls-poi")
-	//compile project(":bv-jxls:bv-jxls-reader")
-	//compile project(":bv-util")
 	compile("com.bestvike:bv-mybatis:3.4.5-SNAPSHOT")
 	compile("com.bestvike:bv-jxls-poi:1.0.9-SNAPSHOT")
 	compile("com.bestvike:bv-jxls-reader:2.0.2-SNAPSHOT")
@@ -103,46 +97,17 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-jdbc")
 	compile("org.springframework.boot:spring-boot-starter-amqp")
 	compile("org.springframework.security.oauth:spring-security-oauth2")
-	/* compile("org.springframework.boot:spring-boot-starter-log4j2")*/
-	/// compile('org.springframework.boot:spring-boot-starter-actuator')
-
-	// spring cloud
-	///compile("org.springframework.cloud:spring-cloud-commons")
-	///compile("org.springframework.cloud:spring-cloud-starter-ribbon")
-	///compile("org.springframework.cloud:spring-cloud-starter-eureka")
-	// compile("org.springframework.cloud:spring-cloud-starter-eureka-server")
-	////compile("org.springframework.cloud:spring-cloud-starter-zuul")
 	// spring
 	compile("org.springframework:spring-web")
 	compile("org.springframework:spring-webmvc")
 	compile("org.springframework.session:spring-session")
 	compile("org.springframework.batch:spring-batch-core")
 	compile("org.springframework:spring-context-support")
-	// compile('org.springframework.data:spring-data-rest-hal-browser')
-	// jedis
-	/// compile("redis.clients:jedis:2.9.0")
 	// jdbc
 	compile("com.oracle:ojdbc6:11g")
-	// compile("org.mariadb.jdbc:mariadb-java-client:2.2.1")
-	// compile("com.alibaba:druid:1.1.6")
-	// compile("org.postgresql:postgresql:9.4.1209")
-	// jxls-reader
-	//compile("org.apache.poi:poi:3.12")
-	//compile("org.apache.poi:poi-ooxml:3.12")
-	//compile("org.jxls:jxls:2.3.0")
-	//compile("org.apache.commons:commons-digester3:3.2")
-	//compile("commons-lang:commons-lang:2.6")
-	// mybatis
-	//compile("org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final")
-	//compile("cglib:cglib:3.2.5")
-	//compile("org.javassist:javassist:3.21.0-GA")
-	//compile("ognl:ognl:3.1.4")
 	compile("org.apache.commons:commons-lang3:3.7")
 	compile("org.apache.logging.log4j:log4j-api:2.3")
 	compile("org.apache.logging.log4j:log4j-core:2.3")
-
-	// fastjson
-	// compile("com.alibaba:fastjson:1.2.38")
 	// java
 	provided("javax.servlet:javax.servlet-api:3.1.0")
 
